@@ -3,9 +3,12 @@
 	"version":"1.0.0",
 	"discription":"An online banking software to allow Dick Beard to have some more free time to drink",
 	"main":"server.js",
-	"scripts":{
-		"start":"node server.js"
-	},
+	"scripts": {
+    "start": "node server.js",
+    "build": "handlebars views/partials/footer.handlebar -f public/campaign-template.js",
+    "prestart":"npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
 	"repository":{
 		"type":"git",
 		"url":"git+https://github.com/carlej/TheBank.git"
