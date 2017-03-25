@@ -4,10 +4,10 @@
 	"discription":"An online banking software to allow Dick Beard to have some more free time to drink",
 	"main":"server.js",
 	"scripts": {
-    "start": "node server.js",
-    "build": "handlebars views/partials/footer.handlebar -f public/campaign-template.js",
-    "prestart":"npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node server.js",
+		"build": "handlebars views/partials/footer.handlebar -f public/campaign-template.js",
+		"prestart":"npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
 },
 	"repository":{
 		"type":"git",
@@ -17,6 +17,7 @@
 		"url":"https://github.com/carlej/TheBank.git/issues"
 	},
 	"homepage": "https://github.com/carlej/TheBank.git#readme",
+	"license": "UNLICENSED",
 	"dependencies":{
 		"body-parser":"^1.15.2",
 		"express":"4.15.2",
