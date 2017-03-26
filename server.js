@@ -78,6 +78,14 @@ app.post('/:user/add-account', function(req,res){
 		});
 })
 
+app.get('/:userID/testing-page',function(req,res){
+	var userID = req.params.userID;
+	res.render('testing-page',{
+		pageTitle:'testing',
+		user: userID,
+	});
+})
+
 
 //code here
 
