@@ -1,3 +1,13 @@
-<div class= "register">
-  <button id= "register-button">register</button>
-</div>
+{{#if user}}
+	<a href="#">{{user}} <i class="fa fa-caret-down"></i></a>
+	<ul class= "navbar-list">
+	<li><a href="/">Logout</a></li>
+	</ul>
+	<div class= "newAccount">
+		<button id="new-account-button">Create Account</button>
+	</div>
+	{{else}}
+		<div class= "register">
+			<button id= "register-button">register</button>
+		</div>
+	{{/if}}

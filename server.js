@@ -10,14 +10,14 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 
-var mysqlHost = process.env.MYSQL_HOST;
-var mysqlUser = process.env.MYSQL_USER;
-var mysqlPassword = process.env.MYSQL_PASSWORD;
+//var mysqlHost = process.env.MYSQL_HOST;
+//var mysqlUser = process.env.MYSQL_USER;
+//var mysqlPassword = process.env.cat;
 var mysqlDB = process.env.MYSQL_DB;
 var mysqlConnection = mysql.createConnection({
-	host: mysqlHost,
-	user: mysqlUser,
-	passowrd: mysqlPassword,
+	host: "localhost",
+	user: "newuser",
+	passowrd: "cat",
 	database: mysqlDB
 });
 
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public' )), function(req,res,next){
 
 app.get('/', function (req, res) {
 	res.render('index-page', {
-		pateTitle:'main'
+		pageTitle:'main'
 	});
 });
 
@@ -44,10 +44,37 @@ app.post('/add-user', function(req,res){
 	mysqlConnection.query(
 		'INSERT (userid) VALUES (?)',
 		[req.params.useID],
-		function(err,result){
-			res.render('test-page', {
-				pageTitle:'main'
-			});
+		function(err, result){
+			if(err){
+				console.log("--Error occured (",req.params.userID,") from database:", err);
+				res.status(500).send("Error sending data to database: "+err);
+			}
+			else{
+				res.status(200).send();
+			}
+		});
+})
+
+app.get('/:userID/test-page',function(req,res){
+	var userID = req.params.userID;
+	res.render('test-page',{
+		pageTitle:'test',
+		user: userID
+	});
+})
+
+app.post('/:user/add-account', function(req,res){
+	mysqlConnection.query(
+		'INSERT INTO accounts (userID,accountID) VALUES(?,?)',
+		[req.params.userID, req.params.accountID],
+		function(err, result){
+			if(err){
+				console.log("--Error occured (",req.params.userID,") from database:", err);
+				res.status(500).send("Error sending data to database: "+err);
+			}
+			else{
+				res.status(200).send();
+			}
 		});
 })
 
