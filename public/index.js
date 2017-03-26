@@ -11,7 +11,7 @@ function createAccount(){
 
 	account_add(accountID,userID,0);
 
-	window.location.href = '/'+userID+'/testing-page';
+	window.location.href = '/'+userID+'/'+accountID+'/testing-page';
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
