@@ -3,9 +3,11 @@
 	<ul class= "navbar-list">
 	<li><a href="/">Logout</a></li>
 	</ul>
+	{{#if account}}
 	<div class= "newAccount">
 		<button id="new-account-button">Create Account</button>
 	</div>
+	{{/if}}
 	{{else}}
 		<div class= "register">
 			<button id= "register-button">register</button>
