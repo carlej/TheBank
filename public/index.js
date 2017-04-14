@@ -1,13 +1,19 @@
+function getUser(){//finds and returns the users ID number
+	var pathComp = window.location.pathname.split('/');
+	return pathComp[1];
+}
+
 function registerUser(){
-	var userID = 10;//createUserID();
+	var userID = java.unil.UUID.randomUUID(); //creates a random ID number using the JAVA GUID
+	
 	user_add(userID);
 
 	window.location.href = '/'+userID+'/test-page';
 }
 
 function createAccount(){
-	var userID = 10;//createUserID();
-	var accountID = 10;//createAccountID();
+	var userID = getUser();
+	var accountID = java.unil.UUID.randomUUID(); //creates a random ID number using JAVA GUID
 
 	account_add(accountID,userID,0);
 
