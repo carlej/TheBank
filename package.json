@@ -1,24 +1,26 @@
 {
 	"name":"SDNtheBAnk",
-	"version":"1.0.0",
-	"discription":"An online banking software to allow Dick Beard to have some more free time to drink",
-	"main":"server.js",
+	"version": "1.0.0",
+	"description": "An online banking software to allow Dick Beard to have some more free time to drink",
+	"main": "server.js",
 	"scripts":{
-		"start":"node server.js"
+		"start": "node server.js"
 	},
 	"repository":{
-		"type":"git",
-		"url":"git+https://github.com/carlej/TheBank.git"
+		"type": "git",
+		"url": "git+https://github.com/carlej/TheBank.git"
 	},
+	"author": "Joshua Carle",
+	"license": "UNLICENSED",
 	"bugs":{
-		"url":"https://github.com/carlej/TheBank.git/issues"
+		"url": "https://github.com/carlej/TheBank.git/issues"
 	},
 	"homepage": "https://github.com/carlej/TheBank.git#readme",
 	"dependencies":{
-		"body-parser":"^1.15.2",
-		"express":"4.15.2",
-		"express-handlebars":"^3.0.0",
-		"handlebars":"^4.0.6",
-		"mysql":"^2.12.0"
+		"body-parser": "^1.15.2",
+		"express": "4.15.2",
+		"express-handlebars": "^3.0.0",
+		"handlebars": "^4.0.6",
+		"mysql": "^2.12.0"
 	}
 }

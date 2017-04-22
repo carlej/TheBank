@@ -86,6 +86,7 @@ app.get('/:userID/:accountID/testing-page',function(req,res){
 		user: userID,
 		account: accountID
 	});
+	console.log("the account",account);
 })
 
 
